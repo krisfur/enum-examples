@@ -7,6 +7,10 @@ The same two ideas in six languages:
 
 Each example prints the same output.
 
+## Excalidraw link
+
+[https://excalidraw.com/#json=gT-eLu8sfVfv6tCByDpMu,gZRzQuLVk7lSEmSJ25Io9g](https://excalidraw.com/#json=gT-eLu8sfVfv6tCByDpMu,gZRzQuLVk7lSEmSJ25Io9g)
+
 ## Running
 
 | Language   | Command                                      |
