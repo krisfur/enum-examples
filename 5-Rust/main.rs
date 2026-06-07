@@ -1,3 +1,6 @@
+use std::fmt;
+
+#[derive(Clone, Copy)]
 #[allow(dead_code)] // we only build `Running` below; the rest are for show
 enum Status {
     Pending,
@@ -6,14 +9,15 @@ enum Status {
     Failed,
 }
 
-impl Status {
-    fn name(&self) -> &'static str {
-        match self {
+impl fmt::Display for Status {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match self {
             Status::Pending => "pending",
             Status::Running => "running",
             Status::Succeeded => "succeeded",
             Status::Failed => "failed",
-        }
+        };
+        f.write_str(name)
     }
 }
 
@@ -34,7 +38,6 @@ enum Media {
 }
 
 // `match` destructures the variant and must be exhaustive
-// adding a variant without handling it is a compile error
 fn describe(m: &Media) -> String {
     match m {
         Media::Text { length } => format!("text: {length} chars"),
@@ -51,7 +54,7 @@ fn describe(m: &Media) -> String {
 
 fn main() {
     let s = Status::Running;
-    println!("status: {} ({})", s.name(), s as u32);
+    println!("status: {s} ({})", s as u32);
 
     let items = [
         Media::Text { length: 280 },
