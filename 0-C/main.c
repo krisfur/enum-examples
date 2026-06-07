@@ -4,7 +4,6 @@
 enum Status { PENDING, RUNNING, SUCCEEDED, FAILED };
 
 // A "tagged union": the `kind` field says which union member is valid.
-// C does NOT enforce this — reading the wrong member is undefined behaviour.
 struct Media {
     enum { TEXT, IMAGE, VIDEO } kind;
     union {

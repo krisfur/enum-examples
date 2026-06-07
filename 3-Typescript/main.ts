@@ -1,5 +1,5 @@
-// TypeScript has a real `enum`, but the more idiomatic choice is usually a
-// union of string literals — it has no runtime cost and prints as itself.
+// TypeScript has a real `enum`, but usually better to use a union of string literals.
+// It has no runtime cost and prints as itself.
 type Status = "pending" | "running" | "succeeded" | "failed";
 
 // A discriminated (tagged) union: every variant shares a literal `kind` field,
